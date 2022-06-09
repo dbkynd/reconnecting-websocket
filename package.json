@@ -12,7 +12,8 @@
         "report": "nyc report --reporter=html && opn coverage/index.html",
         "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
         "lint": "DEBUG=eslint:file-enumerator eslint __tests__/*.* ./*.ts",
-        "prepublishOnly": "npm run clean && npm run lint && npm run build && npm test"
+        "prepublishOnly": "npm run clean && npm run lint && npm run build && npm test",
+        "browserfy": "npm run build && browserify ./dist/reconnecting-websocket-iife.min.js -o dist/reconnecting-websocket-web.js"
     },
     "keywords": [
         "websocket",
@@ -34,6 +35,7 @@
         "@types/jest": "^25.1.2",
         "@typescript-eslint/eslint-plugin": "^2.19.0",
         "@typescript-eslint/parser": "^2.19.0",
+        "browserify": "^17.0.0",
         "coveralls": "^3.0.9",
         "del-cli": "^1.1.0",
         "eslint": "^6.8.0",

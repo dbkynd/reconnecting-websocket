@@ -511,3 +511,8 @@ export default class ReconnectingWebSocket {
         clearTimeout(this._uptimeTimeout);
     }
 }
+
+if (typeof window !== 'undefined') {
+    // @ts-ignore
+    window.ReconnectingWebSocket = ReconnectingWebSocket;
+}
